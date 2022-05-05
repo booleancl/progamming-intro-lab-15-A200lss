@@ -1,0 +1,19 @@
+\c trucks
+
+DROP TABLE IF EXISTS travels;
+
+CREATE TABLE travels(
+    id SERIAL,
+    driver_id INTEGER NOT NULL,
+    local_id INTEGER NOT NULL,
+    ramp_id INTEGER NOT NULL,
+    truck_id INTEGER NOT NULL,    
+    arriveTime TIMESTAMP,
+    return_time TIMESTAMP,
+    departureTime TIMESTAMP,
+    FOREIGN KEY(driver_id) REFERENCES drivers(id),
+    FOREIGN KEY(local_id) REFERENCES locals(id),
+    FOREIGN KEY(ramp_id) REFERENCES ramps(id),
+    FOREIGN KEY(truck_id) REFERENCES trucks(id),
+    PRIMARY KEY(id)   
+);

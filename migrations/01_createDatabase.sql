@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS trucks;
+
+CREATE DATABASE trucks;
